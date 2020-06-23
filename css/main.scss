@@ -1,0 +1,21 @@
+// Import Font
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+// Variables
+$theme: #CF0000;
+$grey: #757575;
+$darkGrey: #404040;
+
+// Base Styling
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+    width: 100vw;
+    overflow-x: hidden;
+}
