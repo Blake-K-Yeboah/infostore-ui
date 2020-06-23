@@ -117,12 +117,12 @@ body::-webkit-scrollbar-thumb {
   background: #ff0303;
 }
 
-header {
-  margin-bottom: 15em;
-}
-
 header .right {
   border-top: 1px solid #dbdbdb;
+}
+
+.section {
+  margin-top: -10px;
 }
 
 header, .section {
@@ -154,7 +154,7 @@ header .content, .section .content {
 
 header .content .title, .section .content .title {
   color: #404040;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   text-transform: uppercase;
   font-weight: normal;
 }
@@ -165,7 +165,7 @@ header .content .title span, .section .content .title span {
 
 header .content .description, .section .content .description {
   color: #a8a8a8;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: .75em 0 1em 0;
 }
 
@@ -177,4 +177,58 @@ header .left .content, .section .left .content {
 header .right .content, .section .right .content {
   text-align: left;
   left: 10vw;
+}
+
+.top-brands {
+  padding: 6em 0;
+}
+
+.top-brands .title {
+  color: #404040;
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+}
+
+.top-brands .title span {
+  color: #CF0000;
+}
+
+.top-brands .brand-logos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  width: 60vw;
+  margin: 4em auto 0 auto;
+  list-style: none;
+}
+
+.top-brands .brand-logos .logo-container .logo {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.footer {
+  background: #eee;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .footer-text {
+  color: #757575;
 }
