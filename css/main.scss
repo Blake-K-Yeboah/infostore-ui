@@ -6,6 +6,11 @@ $theme: #CF0000;
 $grey: #757575;
 $darkGrey: #404040;
 
+// Mixins
+@mixin colorTransition() {
+    transition: color .25s ease-in-out;
+}
+
 // Base Styling
 * {
     margin: 0;
@@ -18,4 +23,151 @@ body {
     background: #fff;
     width: 100vw;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $theme;
+    }
+}
+
+// Navbar
+.navbar {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 0 10vw;
+    height: 12.5vh;
+    min-height: 135px;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+
+    .nav-brand {
+        width: 200px;
+    }
+
+    .nav-list {
+        display:flex;
+        list-style: none;
+        width: 300px;
+        justify-content: space-between;
+        margin-left: -175px;
+
+        .nav-item .nav-link {
+            text-decoration: none;
+            text-transform:uppercase;
+            color: $darkGrey;
+            @include colorTransition();
+            cursor: pointer;
+            font-size: 1rem;
+
+            &:hover {
+                color: $theme;
+            }
+
+            &.active {
+                color: $theme;
+            }
+        }
+    }
+    
+    .nav-icons-list {
+        list-style: none;
+        display: flex;
+        width: 100px;
+        justify-content: space-evenly;
+
+        .icon-container .icon {
+            color: $grey;
+            @include colorTransition();
+            cursor: pointer;
+            font-size: 1.15rem;
+
+            &:hover {
+                color: $theme;
+            }
+        }
+    }
+}
+
+.btn {
+    padding: 16px 28px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+
+    &.primary {
+        color: #fff;
+        background: $theme;
+
+        &:hover {
+            background: lighten($theme, 10%);
+        }
+    }
+}
+
+header {
+    margin-bottom: 15em;
+
+    .right {
+        border-top: 1px solid lighten($grey, 40%);
+    }
+}
+
+header, .section {
+    width: 100vw;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    height: 87.5vh;
+
+    .img {
+        width: 50vw;
+        height: 100vh - 13.5vh; 
+        object-fit: cover;
+    }
+
+    .left {
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    .content {
+        height: 150px;
+        position: relative;
+        top: 30vh;
+
+        .title {
+            color: $darkGrey; 
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: normal;
+
+            span {
+                color: $theme;
+            }
+        }
+
+        .description {
+            color: lighten($grey, 20%);
+            font-size: 1.5rem;
+            margin: .75em 0 1em 0;
+        }
+    }
+
+    .left .content {
+        text-align: right;
+        right: 10vw;
+    }
+
+    .right .content {
+        text-align:left;
+        left: 10vw;
+    }
 }
